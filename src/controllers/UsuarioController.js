@@ -1,4 +1,6 @@
 const UsuarioService = require('../services/UsuarioService')
+const bcrypt = require('bcrypt')
+
 
 module.exports = {
     buscarTodos: async (req, res) =>{
@@ -35,6 +37,8 @@ module.exports = {
     inserir: async (req, res) =>{
         let json = {error: '', result:{}}
 
+        const hashedSenha = await bcrypt.hash(req.body.senha, 8)
+
         let nome = req.body.nome
         let email = req.body.email
         let senha = req.body.senha
@@ -45,7 +49,7 @@ module.exports = {
                 id_usu: UsuarioCodigo,
                 nome,
                 email,
-                senha
+                senha: hashedSenha
             }
         }else{
             json.error = "Campos não enviados"

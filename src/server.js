@@ -11,6 +11,8 @@ server.use(cors())
 server.use(bodyParser.urlencoded({extented: false}))
 
 
+
+
 server.use('/api', routes)
 
 server.listen(process.env.PORT, ()=>{
