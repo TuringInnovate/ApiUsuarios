@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro de Usuarios</title>
+    </head>
+    <body>
+        <h1>Cadastro de Usuário</h1>
+        <form method="POST" action="http://localhost:3000/api/usuarios">
+            <label> Nome: </label><input type="text" name="nome" value="" size="40" maxlength="150"/>
+            <br>
+            <br>
+            <label> E-mail:  </label><input type="text" name="email" value="" size="40" maxlength="150"/>
+            <br>
+            <br>
+            <label> Senha:  </label><input type="text" name="senha" value="" size="40" maxlength="150"/>
+            <br>
+            <br>
+            <input type="submit" name="enviar" value="Salvar"/>
+        </form>
+    </body>
+</html>
+
